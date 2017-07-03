@@ -1,10 +1,10 @@
 jest.dontMock('../Timer');
 
 describe('Timer', function () {
-    var Timer = require('../Timer');
-    var React = require('react/addons');
-    var TestUtils = React.addons.TestUtils;
-    var timer = null;
+    const Timer = require('../Timer');
+    const React = require('react/addons');
+    const TestUtils = React.addons.TestUtils;
+    let timer = null;
 
     beforeEach(function () {
         timer = TestUtils.renderIntoDocument(<Timer/>);

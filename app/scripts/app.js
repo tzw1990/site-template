@@ -1,18 +1,19 @@
 
-var React = window.React = require('react'),
+const React = window.React = require('react'),
     ReactDOM = require("react-dom"),
     Timer = require("./ui/Timer"),
     mountNode = document.getElementById("app");
 
-var TodoList = React.createClass({
+let TodoList = React.createClass({
   render: function() {
-    var createItem = function(itemText) {
+    let createItem = function(itemText) {
       return <li>{itemText}</li>;
     };
     return <ul>{this.props.items.map(createItem)}</ul>;
   }
 });
-var TodoApp = React.createClass({
+
+let TodoApp = React.createClass({
   getInitialState: function() {
     return {items: [], text: ''};
   },
@@ -21,8 +22,8 @@ var TodoApp = React.createClass({
   },
   handleSubmit: function(e) {
     e.preventDefault();
-    var nextItems = this.state.items.concat([this.state.text]);
-    var nextText = '';
+    let nextItems = this.state.items.concat([this.state.text]);
+    let nextText = '';
     this.setState({items: nextItems, text: nextText});
   },
   render: function() {
@@ -39,7 +40,6 @@ var TodoApp = React.createClass({
     );
   }
 });
-
 
 ReactDOM.render(<TodoApp />, mountNode);
 

@@ -1,8 +1,8 @@
 'use strict';
 
-var React = require('react');
+const React = require('react');
 
-var Timer = React.createClass({
+let Timer = React.createClass({
   getInitialState: function() {
     return {secondsElapsed: 0};
   },

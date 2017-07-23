@@ -1,6 +1,8 @@
 $icon-font-path: "../fonts/";
 
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "components-font-awesome/scss/font-awesome.scss";
+@import "nav-bar.scss";
 
 .browsehappy {
     margin: 0.2em 0;
@@ -11,7 +13,7 @@ $icon-font-path: "../fonts/";
 
 /* Space out content a bit */
 body {
-    padding-top: 20px;
+    //padding-top: 20px;
     padding-bottom: 20px;
 }
 
@@ -89,3 +91,4 @@ body {
         border-bottom: 0;
     }
 }
+

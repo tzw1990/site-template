@@ -77,9 +77,6 @@ gulp.task('buildScripts', function() {
         .pipe(gulp.dest('dist/scripts'));
 });
 
-
-
-
 // HTML
 gulp.task('html', function() {
     return gulp.src('app/*.html')
@@ -131,6 +128,13 @@ gulp.task('buildBundle', ['styles', 'buildScripts', 'moveLibraries', 'bower'], f
         .pipe($.useref.restore())
         .pipe($.useref())
         .pipe(gulp.dest('dist'));
+});
+
+gulp.task('buildSrc', function() {
+    return browserify('./app/src/index.js')
+        .bundle()
+        .pipe(source('index.js'))
+        .pipe(gulp.dest('dist/scripts'));
 });
 
 // Move JS Files and Libraries
@@ -201,4 +205,4 @@ gulp.task('build', ['html', 'buildBundle', 'images', 'fonts', 'extras'], functio
 });
 
 // Default task
-gulp.task('default', ['clean', 'build']);
+gulp.task('default', ['clean', 'build', 'buildSrc']);
